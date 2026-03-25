@@ -1,7 +1,7 @@
 FROM node:16
 
-WORKDIR /usr/src/app
-
-COPY package* ./
+COPY . .
 
 RUN npm install
+
+CMD node index.js
