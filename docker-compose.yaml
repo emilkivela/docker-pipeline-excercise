@@ -8,7 +8,8 @@ services:
       - /run/user/1218534/docker.sock:/var/run/docker.sock
     container_name: watchtower
   express-app:
-    image: express-app
+    image: flopaka/express-app:latest
     build: .
+    container_name: express-app
     ports:
       - 8080:8080
