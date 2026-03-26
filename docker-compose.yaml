@@ -1,0 +1,14 @@
+services:
+  watchtower:
+    image: nickfedor/watchtower
+    command: express-app
+    environment:
+      -  WATCHTOWER_POLL_INTERVAL=60 # Poll every 60 seconds
+    volumes:
+      - /run/user/1218534/docker.sock:/var/run/docker.sock
+    container_name: watchtower
+  express-app:
+    image: express-app
+    build: .
+    ports:
+      - 8080:8080
